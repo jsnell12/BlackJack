@@ -23,7 +23,6 @@ if again == "y":
     player_hand = []
     deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4
     game()
-
 else:
     print ("Bye!")
     exit()
@@ -32,10 +31,10 @@ def total(hand):
     total = 0
     for card in hand:
         if card == "J" or card == "Q" or card == "K":
-     total+= 10
-elif card == "A":
-    if total >= 11: total+= 1
-    else: total+= 11
+            total+= 10
+        elif card == "A":
+            if total >= 11: total+= 1
+            else: total+= 11
     else:
         total += card
     return total
@@ -46,8 +45,9 @@ def hit(hand):
     if card == 12:card = "Q"
     if card == 13:card = "K"
     if card == 14:card = "A"
- hand.append(card)
- return hand
+    hand.append(card)
+
+return hand
 
 def clear():
     if os.name == 'nt':
@@ -62,21 +62,20 @@ def print_results(dealer_hand, player_hand):
     print "You have a " + str(player_hand) + " for a total of " + str(total(player_hand))
     def blackjack(dealer_hand, player_hand):
         if total(player_hand) == 21:
-print_results(dealer_hand, player_hand)
+            print_results(dealer_hand, player_hand)
     print "Congratulations! You got a Blackjack!\n"
     play_again()
-
-elif total(dealer_hand) == 21:
+if total(dealer_hand) == 21:
     print_results(dealer_hand, player_hand)
     print "Sorry, you lose. The dealer got a blackjack.\n"
     play_again()
 
 def score(dealer_hand, player_hand):
     if total(player_hand) == 21:
-    print_results(dealer_hand, player_hand)
+        print_results(dealer_hand, player_hand)
     print "Congratulations! You got a Blackjack!\n"
 
-elif total(dealer_hand) == 21:
+if total(dealer_hand) == 21:
     print_results(dealer_hand, player_hand)
     print "Sorry, you lose. The dealer got a blackjack.\n"
 
@@ -103,7 +102,7 @@ def game():
 
 dealer_hand = deal(deck)
 player_hand = deal(deck)
-    while choice != "q":
+while choice != "q":
         print "The dealer is showing a " + str(dealer_hand[0])
         print "You have a " + str(player_hand) + " for a total of " + str(total(player_hand))
         blackjack(dealer_hand, player_hand)
@@ -121,8 +120,9 @@ player_hand = deal(deck)
             score(dealer_hand, player_hand)
             play_again()
 
-elif choice == "q":
+if choice == "q":
     print "Bye!"
     exit()
 
 if __name__ == "__main__":
+    game()
