@@ -25,7 +25,7 @@ if again == "y":
     game()
 
 else:
-    print "Bye!"
+    print ("Bye!")
     exit()
 
 def total(hand):
