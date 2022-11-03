@@ -106,7 +106,7 @@ class BJ(object):
                     hand1 = self.deal_hand(2, self.deck)
                     hand2 = self.deal_hand(2, self.deck)
                     print ("Player 1 Hand: %s\nPlayer 2 Hand: %s" % (hand1, hand2)
-                    print ("Player 1 Score: %s\nPlayer 2 Score: %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
+                    print("Player 1 Score: %s\nPlayer 2 Score: %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
                     while self.score_hand_BJ(hand2) <= BJ.dealer_hit_threshold:
                         if not self.deck:
                             print ("The deck is empty. Start over.")
