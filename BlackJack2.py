@@ -77,7 +77,7 @@ class BJ(object):
             for i in range(n):
                 hand.append(deck.cards.pop(random.choice(range(len(deck)))))
         else:
-            print ("There are not enough cards in the deck to deal %d cards."\n)
+            print ("There are not enough cards in the deck to deal any cards.")
         return hand
 
     def hit_hand(self, hand, deck):
