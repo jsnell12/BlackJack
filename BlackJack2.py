@@ -100,7 +100,7 @@ class BJ(object):
             option = raw_input("(D)eal, (H)it Me, (S)tand, (Q)uit")
             if option.upper() == "D":
                 if playing:
-                    print "You are already playing a hand!"
+                    print ("You are already playing a hand!")
                 else:
                     playing = True
                     hand1 = self.deal_hand(2, self.deck)
