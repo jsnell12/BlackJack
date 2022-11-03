@@ -105,16 +105,16 @@ class BJ(object):
                     playing = True
                     hand1 = self.deal_hand(2, self.deck)
                     hand2 = self.deal_hand(2, self.deck)
-                    print "Player 1 Hand: %s\nPlayer 2 Hand: %s" % (hand1, hand2)
-                    print "Player 1 Score: %s\nPlayer 2 Score: %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
+                    print ("Player 1 Hand: %s\nPlayer 2 Hand: %s" % (hand1, hand2)
+                    print ("Player 1 Score: %s\nPlayer 2 Score: %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
                     while self.score_hand_BJ(hand2) <= BJ.dealer_hit_threshold:
                         if not self.deck:
-                            print "The deck is empty. Start over."
+                            print ("The deck is empty. Start over.")
                             self.play_over()
                             return
                         else:
                             self.hit_hand(hand2, self.deck)
-                            print "Dealer took a HIT. Current HAND: %s Score: %s" % (hand2, self.score_hand_BJ(hand2))
+                            print ("Dealer took a HIT. Current HAND: %s Score: %s" % (hand2, self.score_hand_BJ(hand2))
                             if self.score_hand_BJ(hand2) > 21:
                                 print "Dealer BUSTS. Player wins."
                                 self.results.append(["Player", hand1, hand2])
@@ -124,30 +124,30 @@ class BJ(object):
             elif option.upper() == "H":
                 if playing:
                     if not self.deck:
-                        print "The deck is empty. Start over."
+                        print ("The deck is empty. Start over.")
                         self.play_over()
                         return
                     else:
                         self.hit_hand(hand1, self.deck)
-                        print "Player took a HIT. Current HAND: %s Score: %s" % (hand1, self.score_hand_BJ(hand1))
+                        print ("Player took a HIT. Current HAND: %s Score: %s" % (hand1, self.score_hand_BJ(hand1))
                         if self.score_hand_BJ(hand1) > 21:
-                            print "Player BUSTS. Dealer wins."
+                            print ("Player BUSTS. Dealer wins.")
                             self.results.append(["Dealer", hand1, hand2])
                             playing = False
                             print
                 else:
-                    print "You must DEAL before taking a HIT"
+                    print ("You must DEAL before taking a HIT")
 
             elif option.upper() == "S":
                 if playing:
                     if self.score_hand_BJ(hand1) > self.score_hand_BJ(hand2):
-                        print "PLAYER wins this hand. Score: %s to %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
+                        print ("PLAYER wins this hand. Score: %s to %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
                         self.results.append(["Player", hand1, hand2])
                     else:
-                        print "DEALER wins this hand. Score: %s to %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
+                        print ("DEALER wins this hand. Score: %s to %s" % (self.score_hand_BJ(hand1), self.score_hand_BJ(hand2))
                         self.results.append(["Dealer", hand1, hand2])
                 else:
-                    print "You must DEAL before selecting option to STAND."
+                    print ("You must DEAL before selecting option to STAND.")
                 playing = False
                 print
 
